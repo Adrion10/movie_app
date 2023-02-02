@@ -24,7 +24,9 @@ function App() {
           value="Iron man"
           onChange={() => {}}
         />
+        <img src={SearchIcon} alt="search" onClick={() => {}} />
       </div>
+      <div className="container"></div>
     </div>
   );
 }
