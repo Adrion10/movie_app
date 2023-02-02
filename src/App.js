@@ -15,14 +15,17 @@ function App() {
     searchMovies("Iron Men");
   }, []);
 
-  return;
-  (<div className="app"></div>)(<h1> LaceMovieApp</h1>);
-  <div className="search">
-    <input
-      placeholder="Search for movies"
-      value="Iron man"
-      onChange={() => {}}
-    />
-  </div>;
+  return (
+    <div className="app">
+      <h1>LaceMovieApp</h1>
+      <div className="search">
+        <input
+          placeholder="Search for movies"
+          value="Iron man"
+          onChange={() => {}}
+        />
+      </div>
+    </div>
+  );
 }
 export default App;
