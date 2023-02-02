@@ -4,6 +4,15 @@ import SearchIcon from "./Search.svg";
 
 const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
 
+const movie1 = {
+  Poster:
+    "https://m.media-amazon.com/images/M/MV5BYzkxOGRiZGUtYjA2YS00NTczLTllNGMtZWRmYjgxZjZjMDQ4L2ltYWdlXkEyXkFqcGdeQXVyMjQzNDA4MTg@._V1_SX300.jpg",
+  Title: "Iron Men",
+  Type: "movie",
+  Year: "2017",
+  imdbID: "tt6440810",
+};
+
 function App() {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -26,7 +35,16 @@ function App() {
         />
         <img src={SearchIcon} alt="search" onClick={() => {}} />
       </div>
-      <div className="container"></div>
+      <div className="container">
+        <div className="movie">
+          <div>
+            <p>{movie1.Year} </p>
+          </div>
+          <div>
+            <img src={movie1.Poster} alt={movie1.Title} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
