@@ -5,15 +5,6 @@ import SearchIcon from "./Search.svg";
 
 const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
 
-const movie = {
-  Poster:
-    "https://m.media-amazon.com/images/M/MV5BYzkxOGRiZGUtYjA2YS00NTczLTllNGMtZWRmYjgxZjZjMDQ4L2ltYWdlXkEyXkFqcGdeQXVyMjQzNDA4MTg@._V1_SX300.jpg",
-  Title: "Iron Men",
-  Type: "movie",
-  Year: "2017",
-  imdbID: "tt6440810",
-};
-
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,9 +26,13 @@ function App() {
         <input
           placeholder="Search for movies"
           value={searchTerm}
-          onChange={() => {}}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <img src={SearchIcon} alt="search" onClick={() => {}} />
+        <img
+          src={SearchIcon}
+          alt="search"
+          onClick={() => searchMovies(searchTerm)}
+        />
       </div>
       {movies?.length > 0 ? (
         <div className="container">
